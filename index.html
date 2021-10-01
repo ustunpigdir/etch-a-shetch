@@ -7,20 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>ETCH A SKETCH</h1>
-    <div id="ui">
-        <div id="container"></div>
-
+    <header>
+        <p>ETCH A SKETCH</p>
         <div id="button-div">
-            <input type="number" id="grid-number" value=16>
+            <button id="eraser">Eraser</button>
             <button id="reset-btn">Reset</button>
             <button id="rainbow-btn">Rainbow Mode</button>
-            <input type="color" id="color-picker">
+
             <button id="opacity-btn">Opacity Mode</button>
+
         </div>
+    </header>
+    <div id="ui">
+        <div id="inputs">
+            <label for="color-picker">Pick a Color</label>
+            <input type="color" id="color-picker">
+            <label for="grid-number">Change grid number</label>
+            <input type="number" id="grid-number" value=16>
+        </div>
+
+
+        <div id="container"></div>
+
+
 
     </div>
 

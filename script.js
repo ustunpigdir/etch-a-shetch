@@ -5,15 +5,15 @@ const colorPicker = document.getElementById("color-picker")
 const opacityBtn = document.getElementById("opacity-btn")
 const gridNo = document.getElementById("grid-number")
 const grids = document.getElementsByClassName("grid")
-
+const eraserBtn = document.getElementById("eraser")
 
 const sketch = function (gridNumber = gridNo.value) {
 
     for (let i = 0; i < gridNumber * gridNumber; i++) {
         const divCreator = document.createElement("div")
         divCreator.className = "grid"
-        divCreator.style.height = `${500 / gridNo.value}px`
-        divCreator.style.width = `${500 / gridNo.value}px`
+        divCreator.style.height = `${800 / gridNo.value}px`
+        divCreator.style.width = `${800 / gridNo.value}px`
         divCreator.addEventListener("mouseover", () => divCreator.style.backgroundColor = "black")
         container.appendChild(divCreator)
 
@@ -44,6 +44,11 @@ colorPicker.addEventListener("input", function () {
     }
 })
 
+eraserBtn.addEventListener("click", function () {
+    for (const grid of grids) {
+        grid.addEventListener("mouseover", () => grid.style.backgroundColor = "white")
+    }
+})
 
 const randomColor = function () {
     const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
@@ -67,12 +72,5 @@ opacityBtn.addEventListener("click", function () {
 
     }
 })
-
-
-
-
-
-
-
 
 sketch()
